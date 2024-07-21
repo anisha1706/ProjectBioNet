@@ -29,8 +29,8 @@ library(org.Mm.eg.db)
 update.packages(ask = FALSE)
 
 # Reading data from Excel files
-data_CD8T <- read_excel("/Users/anishabhandare/Desktop/NicheNetAnalysis/GSE231302_tumor_CD8T_cells_metadata_norm.xlsx")
-data_cDCs <- read_excel("/Users/anishabhandare/Desktop/NicheNetAnalysis/GSM6019670_BD_tumor_dc_filtered_norm.xlsx")
+data_CD8T <- read_excel("https://raw.githubusercontent.com/anisha1706/ProjectBioNet/main/GSE231302_tumor_CD8T_cells_metadata_norm.xlsx")
+data_cDCs <- read_excel("https://raw.githubusercontent.com/anisha1706/ProjectBioNet/main/GSM6019670_BD_tumor_dc_filtered_norm.xlsx")
 
 # Formatting the CD8+ T cells dataset
 colnames(data_CD8T) <- as.character(data_CD8T[1, ])
