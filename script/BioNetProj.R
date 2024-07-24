@@ -29,8 +29,8 @@ library(org.Mm.eg.db)
 update.packages(ask = FALSE)
 
 # Reading data from Excel files
-data_CD8T <- read_excel("https://raw.githubusercontent.com/anisha1706/ProjectBioNet/main/GSE231302_tumor_CD8T_cells_metadata_norm.xlsx")
-data_cDCs <- read_excel("https://raw.githubusercontent.com/anisha1706/ProjectBioNet/main/GSM6019670_BD_tumor_dc_filtered_norm.xlsx")
+data_CD8T <- read_excel("data/GSE231302_tumor_CD8T_cells_metadata_norm.xlsx")
+data_cDCs <- read_excel("data/GSM6019670_BD_tumor_dc_filtered_norm.xlsx")
 
 # Formatting the CD8+ T cells dataset
 colnames(data_CD8T) <- as.character(data_CD8T[1, ])
@@ -470,8 +470,9 @@ for (comparison in names(degs_clusters_list)) {
   }
 }
 
-# Visualizing the results for conditions
+# Visualizing the results for conditions 
 
+# Loop through all conditions and plot if results are available
 for (i in seq_along(enrichment_results_conditions)) {
   if (!is.null(enrichment_results_conditions[[i]])) {
     print(dotplot(enrichment_results_conditions[[i]]) + ggtitle(paste('GO Enrichment Analysis for Condition', i)))
@@ -481,6 +482,7 @@ for (i in seq_along(enrichment_results_conditions)) {
 }
 
 # Visualizing the results for clusters
+
 
 for (i in seq_along(enrichment_results_clusters)) {
   if (!is.null(enrichment_results_clusters[[i]])) {
