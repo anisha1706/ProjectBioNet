@@ -81,8 +81,7 @@ To run the code, you need the following software and packages:
 ## Example Output
 Example plots can be found in the `figures/` directory. These plots provide visualizations of the ligand activities, ligand-target interactions, and GO enrichment results.
 
-## Session Info
-The session information used for this analysis can be found in `sessionInfo.txt`, which includes details about the R environment and package versions used.
+
 
 ## Contact
 For any questions, please contact [Anisha Bhandare](mailto:anisha.bhandare@gmail.com).
