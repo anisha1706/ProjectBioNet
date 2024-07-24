@@ -470,16 +470,24 @@ for (comparison in names(degs_clusters_list)) {
   }
 }
 
-# Visualizing the results for conditions 
+# Visualizing the results for conditions
 
-if (!is.null(enrichment_results_conditions[[1]])) {
-  dotplot(enrichment_results_conditions[[1]]) + ggtitle('GO Enrichment Analysis for Conditions')
+for (i in seq_along(enrichment_results_conditions)) {
+  if (!is.null(enrichment_results_conditions[[i]])) {
+    print(dotplot(enrichment_results_conditions[[i]]) + ggtitle(paste('GO Enrichment Analysis for Condition', i)))
+  } else {
+    print(paste('No enrichment results for Condition', i))
+  }
 }
 
 # Visualizing the results for clusters
 
-if (!is.null(enrichment_results_clusters[[1]])) {
-  dotplot(enrichment_results_clusters[[1]]) + ggtitle('GO Enrichment Analysis for Clusters')
+for (i in seq_along(enrichment_results_clusters)) {
+  if (!is.null(enrichment_results_clusters[[i]])) {
+    print(dotplot(enrichment_results_clusters[[i]]) + ggtitle(paste('GO Enrichment Analysis for Cluster Comparison', names(enrichment_results_clusters)[i])))
+  } else {
+    print(paste('No enrichment results for Cluster Comparison', names(enrichment_results_clusters)[i]))
+  }
 }
 
 # Creating line plot for ligand activities 
